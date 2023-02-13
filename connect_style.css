@@ -1,28 +1,36 @@
 html{
  width: 100%;
- height: 100%;
+ height: 60%;
 }
 
 body {
-align-items: center;
-text-align: center;
+background-color:antiquewhite;
+}
+
+h1 {
+    color:rgb(99, 37, 158);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#board {
+    background-color: rgba(206, 185, 64, 0.678);
 }
 
 #board td {
-    width: 100px;
-    height: 100px;
-    border: solid 1px black;
+    width: 90px;
+    height: 71px;
+    border: solid 2px rgb(59, 11, 230);
 }
 
 .piece {
     margin: 5px;
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
     border-radius: 50%;
 }
 
 .piece.p1 {
-    background-color: palevioletred;
+    background-color: rgb(255, 116, 237);
 }
 
 .piece.p2 {
@@ -30,9 +38,9 @@ text-align: center;
 }
 
 #topColumn td {
-    border: dashed 1px rgb(175, 67, 17);
+    border: dashed 2px rgb(182, 63, 8);
 }
 
 #topColumn td:hover {
-    background-color: rgb(6, 180, 59);
+    background-color: rgb(27, 180, 73);
 }

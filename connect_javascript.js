@@ -70,7 +70,7 @@ function handleClick(e) {
     tablePlacement(y, x);
 
     if (checkForWin()) {
-        return endGame(`Player ${currPlayer} won!`);
+        return endGame(`Player ${currPlayer} WON!`);
     }
 
     if (board.every(row => row.every(cell => cell))) {
