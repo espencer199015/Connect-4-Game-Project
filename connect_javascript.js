@@ -51,7 +51,7 @@ function tablePlacement(y,x) {
     piece.classList.add(`p${currPlayer}`);
     piece.style.top = -50 * (y + 2);
 
-    const spot = getElementById(`${y}-${x}`);
+    const spot = document.getElementById(`${y}-${x}`);
     spot.append(piece);
 }
 
