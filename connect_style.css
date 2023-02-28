@@ -37,10 +37,10 @@ h1 {
     background-color: aqua;
 }
 
-#topColumn td {
+#topRow td {
     border: dashed 2px rgb(182, 63, 8);
 }
 
-#topColumn td:hover {
+#topRow td:hover {
     background-color: rgb(27, 180, 73);
 }

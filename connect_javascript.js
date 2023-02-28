@@ -1,53 +1,56 @@
-//This is the number of of "blue" board tiles in rows and columns
+//This is the number of "blue" board tiles in rows and columns
 const width = 7; //this shows how many columns
 const height = 6; //this shows how many rows
 
-let currPlayer = 1; //this establishes the player tokens
-let board = []; //this establishes an empty array
+let currPlayer = 1; //this establishes the players
+let board = []; //this establishes the board is an empty array
 
 //this function makes the board
 function makeBoard() {
-    for(let y = 0; y < height; y++) {
-        board.push(Array.from({ length: width}));
+    for(let y = 0; y < height; y++) { //this is a for loop that goes through the columns, 
+                                     //starting at the first column (with the index of 0)
+        board.push(Array.from({ length: width})); //this makes each cell of the board an array
     }
-}
-//board = [[1, 2, null], [null, null, null], [null, null, null]]
-//this function starts the game played on the 
-//board with clicks made on the top row (orange row)
-function makeMainBoard() {
-    const board = document.getElementById('board');
-    const top = document.createElement('tr');
-    top.setAttribute('id', 'topColumn');
-    top.addEventListener('click', handleClick);
+} //board = [[1, 2, null], [null, null, null], [null, null, null]]
 
-//this loop sets where the tokens go in accordance to the row
-    for(let x=0; x < width; x++) {
-        const headCell = document.createElement('td');
-        headCell.setAttribute('id', x);
-        top.append(headCell);
+
+//this function makes the top row (orange, dotted row) of the board where the player clicks to place their game token on the board
+function makeMainBoard() {
+    const board = document.getElementById('board'); //this declares the variable ('board') and connects it to the html tag id 'board'
+    const top = document.createElement('tr'); //this declares the variable ('top') and connects it to the html tag id 'tr' 
+    top.setAttribute('id', 'topRow'); //this assigns the html tags (the tags that are connected to the 
+                                        //declared variables in this function) to the top row (orange, dotted row)
+    top.addEventListener('click', handleClick); //this signals that each cell on the top row (orange, dotted row) can be clicked on
+
+//this for loop sets where the tokens go on the board in accordance to the cell clicked on the top row
+    for(let x=0; x < width; x++) {//this goes through the board starting with the first column
+        const headCell = document.createElement('td'); //this declares the variable ('headCell') and connects it to the html tag id 'td'
+        headCell.setAttribute('id', x); //this assigns the html tags (the tags that are connected to the declared variables in this for loop)
+                                       //to the columns
+        top.append(headCell);     //this connects the the declared variable ('headCell') to the html tag, 'tr' and to the top row.
     }
-//this connects the main board to the top row
+//this connects the main board's rows and columns to the top row
     board.append(top);
 
-//this loop sets where the tokens go in accordance to the column
-    for (let y = 0; y < height; y++) {
-        const row = document.createElement('tr');
+//this for loop sets where the tokens go in accordance to the row
+    for (let y = 0; y < height; y++) { //this is a for loop that goes through the rows
+        const row = document.createElement('tr'); //this declares the variable ('row') and connects it to the html tag ('tr')
 
-//this loop sets the placement of the token to where it is to 
+//this for loop sets the placement of the token to where it is to 
 //display according to the row and column clicked.
-        for(let x = 0; x < width; x++) {
-            const cell = document.createElement('td');
-            cell.setAttribute('id', `${y}-${x}`);
-            row.append(cell); //this connects the token to the row
+        for(let x = 0; x < width; x++) { //this is a for loop that goes through the columns
+            const cell = document.createElement('td'); //this declares the variable ('cell') and connects it to the html tag ('td')
+            cell.setAttribute('id', `${y}-${x}`); //this connects the 'cell' variable to the html tag and to the row and column location
+            row.append(cell); //this connects the variable, 'cell' to the row
         }
 
-//this connects the row to the board       
+//this connects the variable row to the variable board       
         board.append(row);
     }
 }
 
 //this function makes sure the token is displayed on the board
-function spotForCol(x) {
+function spotForCol(x) { //this is declaring the function (spotForCol) and the 
     for(let y = height - 1; y >= 0; y--) {
         if(!board[y][x]) {
             return y;
