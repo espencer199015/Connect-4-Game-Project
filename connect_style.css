@@ -1,46 +1,49 @@
+/*how wide and tall the page is*/
 html {
  width: 100%;
  height: 60%;
 }
-
+/*this is the main part of the page (where the game board is displayed)*/
 body {
-background-color:antiquewhite;
+background-color:antiquewhite; /*this colors the body of the page*/
 }
-
+/*This is the first header on the body*/
 h1 {
-    color:rgb(99, 37, 158);
+    color:rgb(99, 37, 158); /*This colors the text in the header*/
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+}/*This is the text style for the header*/
 
-#board {
+#board { /*This colors the board*/
     background-color: rgba(206, 185, 64, 0.678);
 }
 
-#board td {
+#board td { /*this gives the board it's height and width 
+    and colors the border of each cell on the board (except the top row)*/
     width: 90px;
     height: 71px;
     border: solid 2px rgb(59, 11, 230);
 }
-
+/*This gives the players' pieces their height, width, and radius*/
 .piece {
     margin: 5px;
     width: 85%;
     height: 85%;
     border-radius: 50%;
 }
-
+/*This colors the first piece*/
 .piece.p1 {
     background-color: rgb(255, 116, 237);
 }
-
+/*This colors the second piece*/
 .piece.p2 {
     background-color: aqua;
 }
-
+/*This colors and styles the border of the top row*/
 #topRow td {
     border: dashed 2px rgb(182, 63, 8);
 }
-
+/*This causes the top row's individual cell colors to change 
+when the player hovers over a certain on the top row*/
 #topRow td:hover {
     background-color: rgb(27, 180, 73);
 }
