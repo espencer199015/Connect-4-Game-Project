@@ -9,6 +9,7 @@ background-color:antiquewhite; /*this colors the body of the page*/
 }
 /*This is the first header on the body*/
 h1 {
+    text-align: center; /*centers the title on top of page*/
     color:rgb(99, 37, 158); /*This colors the text in the header*/
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }/*This is the text style for the header*/
